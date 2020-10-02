@@ -1,0 +1,2 @@
+bean scopes
+constructor/setter/field injection

@@ -1,0 +1,19 @@
+1. Za pomocą Spring Boota stwórz RESTowy interfejs obsługujący obiekt Movie. Standardowy CRUD (Create Read Update Delete):
+- POST 	 /movies tworzy nowy film na podstawie JSONa z body requesta
+- GET 	 /movies/{id} zwraca JSON z filmem o podanym id
+- GET 	 /movies zwraca JSON z wszystkimi zapisanymi filmami
+- PUT 	 /movies/{id} modyfikuje film o danym id - np. zmienia tytuł na podany w parametrze requestu
+- DELETE /movies/{id} usuwa film o podanym id
+By zachować dane, nie używaj jeszcze repozytorium JDBC/JPA. Zamiast tego stwórz nowego Beana i wstrzyknij go do swojego kontrolera.
+
+2. Użyj Postmana aby przetestować wszystkie metody tworząc reużywalne requesty
+3. Zadbaj by wszystkie metody zwracały odpowiedni status, zarówno gdy akcja się powiedzie jak gdy zakończy się niepowodzeniem. Użyj ExceptionHandlera
+- Create: 201 (Created), 409 (Conflict)
+- Read: 200 (OK), 404 (Not Found)
+- Update: 200 (OK), 404 (Not Found)
+- Delete: 200 (OK), 404 (Not Found)
+4. Użyj Thymeleafa żeby stworzyć template do przykładowej strony Hello World! z parametrem 'name'
+5. Stwórz template dla konkretnego filmu. tag 'th:text'
+6. Stwórz template dla wszystkich filmów, który wyświetli ich tytuły (i inne parametry) . tag 'th:href'. Możesz traktować ten template jako stronę główną
+7. Zmodyfikuj stronę główną (lub stwórz nowy template) tak, aby umożliwić dodawanie nowego filmu. Użyj elementu HTTP 'form'
+8. Zmodyfikuj ExceptionHandlery tak, aby wyświetlały stworzoną przez Ciebie statyczną stronę z informacją o błędzie

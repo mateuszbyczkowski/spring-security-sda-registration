@@ -13,7 +13,7 @@ public class Main {
         Figura kwadrat1 = new Kwadrat(3.45);
 
         List<Figura> figury = Arrays.asList(kolo, kolo1, kwadrat, kwadrat1);
-        List<Figura> figury2 = new ArrayList<>();
+        List<Kolo> figury2 = new ArrayList<>();
         List<Figura> figury3 = new LinkedList<>();
 
         Map<Integer, Figura> figuraMap = new TreeMap<>();

@@ -1,8 +1,16 @@
 package com.kss.springmovies.dto;
 
+import javax.persistence.*;
+
+@Entity
+//@Table(name = "movies")
 public class Movie {
-    private String title;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
+    private String title;
 
     public Movie() { }
 

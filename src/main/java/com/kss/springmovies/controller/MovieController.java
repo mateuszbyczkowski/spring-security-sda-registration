@@ -32,7 +32,7 @@ public class MovieController {
 
     @GetMapping("movies")
     public String readAllMovies(Model model) {
-        model.addAttribute("movies", movieRepository.getAllMovies());
+        model.addAttribute("moviesVariable", movieRepository.getAllMovies());
         return "movies";
     }
 

@@ -9,7 +9,7 @@
     <h2>Current movies</h2>
     <hr>
     <table>
-        <tr th:each="movie: ${movies}">
+        <tr th:each="movie: ${moviesVariable}">
             <td th:text="${movie.title}" />
             <td><a href="movie.html" th:href="@{/movies/{id}(id=${movie.id})}">view</a></td>
         </tr>

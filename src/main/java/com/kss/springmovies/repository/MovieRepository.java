@@ -5,10 +5,11 @@ import com.kss.springmovies.dto.Movie;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MovieRepository {
     private Integer currentId = 1;
-    private final Map<Integer, Movie> movies = new HashMap<>();
+    private final Map<Integer, Movie> movies = new TreeMap<>();
 
     public int addMovie(Movie movie) throws MovieExistsException {
         if (movies.values().stream().anyMatch(m -> m.getTitle().equals(movie.getTitle()))) {

@@ -2,7 +2,6 @@ package com.kss.springmovies.repository;
 
 import com.kss.springmovies.dto.Movie;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -11,9 +10,9 @@ public class MovieRepository {
     private Integer currentId = 1;
     private final Map<Integer, Movie> movies = new TreeMap<>();
 
-    public int addMovie(Movie movie) throws MovieExistsException {
+    public int addMovie(Movie movie) throws EntityExistsException {
         if (movies.values().stream().anyMatch(m -> m.getTitle().equals(movie.getTitle()))) {
-            throw new MovieExistsException();
+            throw new EntityExistsException();
         }
         movie.setId(currentId);
         movies.put(currentId, movie);

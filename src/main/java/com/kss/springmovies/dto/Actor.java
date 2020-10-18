@@ -1,6 +1,12 @@
 package com.kss.springmovies.dto;
 
+import org.hibernate.validator.constraints.CreditCardNumber;
+import org.hibernate.validator.constraints.pl.PESEL;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 @Entity
 public class Actor {
@@ -10,9 +16,11 @@ public class Actor {
     private Long id;
 
     @Column(nullable = false)
+    @NotBlank
     private String name;
 
     @Column(nullable = false)
+    @NotBlank
     private String surname;
 
     public Long getId() {

@@ -31,10 +31,10 @@ public class TicketService {
         Specification<Ticket> specification = Specification.where(null);
 
         if (age != null) {
-            specification.and(minimalAgeIsUnder(age));
+            specification = specification.and(minimalAgeIsUnder(age));
         }
         if (price != null) {
-            specification.and(priceIsUnder(price));
+            specification = specification.and(priceIsUnder(price));
         }
 
         return this.ticketRepository.findAll(specification, pageRequest);

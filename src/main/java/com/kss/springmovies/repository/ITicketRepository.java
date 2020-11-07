@@ -10,10 +10,14 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
+import java.util.List;
+
 import static com.kss.springmovies.dto.Ticket.FIELD_MINIMAL_AGE;
 import static com.kss.springmovies.dto.Ticket.FIELD_PRICE;
 
 public interface ITicketRepository extends JpaRepository<Ticket, Long>, JpaSpecificationExecutor {
+
+    List<Ticket> findAllByMinimalAgeIsLessThanAndPriceGreaterThan(Integer age, Integer price);
 
     static Specification<Ticket> minimalAgeIsAbove(Integer age) {
         return new Specification<Ticket>() {
